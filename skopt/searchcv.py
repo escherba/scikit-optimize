@@ -1,4 +1,5 @@
-from collections import defaultdict, Sized
+from collections import defaultdict
+from collections.abc import Sized
 from functools import partial
 
 import numpy as np
@@ -542,7 +543,7 @@ class BayesSearchCV(BaseSearchCV):
         params = optimizer.ask(n_points=n_points)
 
         # convert parameters to python native types
-        params = [[np.asscalar(np.array(v)) for v in p] for p in params]
+        params = [[np.array(v).item() for v in p] for p in params]
 
         # make lists into dictionaries
         params_dict = [point_asdict(search_space, p) for p in params]

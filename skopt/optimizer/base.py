@@ -7,7 +7,7 @@ It is sufficient that one re-implements the base estimator.
 import copy
 import inspect
 import numbers
-from collections import Iterable
+from collections.abc import Iterable
 
 import numpy as np
 

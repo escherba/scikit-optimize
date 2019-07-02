@@ -17,6 +17,8 @@ setup(name='scikit-optimize',
                 'skopt.learning.gaussian_process'],
       install_requires=['pyaml', 'joblib', 'numpy', 'scipy>=0.14.0',
                         'scikit-learn>=0.19.1'],
+      setup_requires=['pytest-runner'],
+      tests_require=['pytest'],
       extras_require={
         'plots':  ["matplotlib"]
         }
