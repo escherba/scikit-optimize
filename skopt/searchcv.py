@@ -354,13 +354,13 @@ class BayesSearchCV(BaseSearchCV):
     # copied for compatibility with 0.19 sklearn from 0.18 BaseSearchCV
     @property
     def best_score_(self):
-        check_is_fitted(self, 'cv_results_')
+        check_is_fitted(self)
         return self.cv_results_['mean_test_score'][self.best_index_]
 
     # copied for compatibility with 0.19 sklearn from 0.18 BaseSearchCV
     @property
     def best_params_(self):
-        check_is_fitted(self, 'cv_results_')
+        check_is_fitted(self)
         return self.cv_results_['params'][self.best_index_]
 
     # copied for compatibility with 0.19 sklearn from 0.18 BaseSearchCV
